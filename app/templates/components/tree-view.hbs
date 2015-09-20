@@ -1,0 +1,7 @@
+{{#each model as |folderOrItem|}}
+  {{#if folderOrItem.isFolder}}
+    {{tree-view-folder model=folderOrItem labelProperty="displayName"}}
+  {{else}}
+    {{tree-view-item model=folderOrItem labelProperty="displayName"}}
+  {{/if}}
+{{/each}}

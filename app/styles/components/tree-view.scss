@@ -1,0 +1,91 @@
+$tree-view-base-font-size: 13px;
+$tree-view-folder-background-color-active: darken(color($grey, 200), 12%);
+$tree-view-folder-color: $black;
+$tree-view-folder-color-active: $black;
+$tree-view-item-color: $black;
+$tree-view-item-color-active: $black;
+
+// Default to a darker grey selection color if no accent color is set
+@if variable-exists(accent-color) {
+  $tree-view-item-background-color-active: $accent-color;
+} @else {
+  $tree-view-item-background-color-active: darken(color($grey, 200), 12%);
+}
+
+.tree-view {
+  @include clearfix;
+  bottom: 25px;
+  box-shadow: inset -1px 0 0 darken(color($grey, 200), 3%);
+  left: 0;
+  overflow: auto;
+  position: absolute;
+  right: 0;
+  top: 36px;
+  z-index: 1;
+
+  ul {
+    display: table;
+    position: relative;
+    width: 100%;
+  }
+
+  li {
+    display: block;
+    left: 0;
+    position: relative;
+    right: 0;
+  }
+
+  i.fa {
+    display: inline-block;
+    font-size: 0.89em;
+    position: relative;
+    text-align: center;
+    top: 0.04em;
+    vertical-align: top;
+    width: 1.5em;
+  }
+
+  .tree-view-folder .tree-view-folder-name,
+  .tree-view-item .tree-view-item-name {
+    cursor: default;
+    display: block;
+    font-size: $tree-view-base-font-size;
+    padding: ($tree-view-base-font-size * 0.49) $tree-view-base-font-size ($tree-view-base-font-size * 0.45);
+    position: relative;
+    text-decoration: none;
+    vertical-align: bottom;
+    white-space: nowrap;
+    z-index: 2;
+  }
+
+  .tree-view-folder {
+    color: $tree-view-folder-color;
+
+    &:hover {
+      color: $tree-view-folder-color;
+    }
+
+    &.active {
+      background-color: $tree-view-folder-background-color-active;
+      color: $tree-view-folder-color-active;
+    }
+  }
+
+  .tree-view-item .tree-view-item-name {
+    color: $tree-view-item-color;
+
+    &:hover {
+      color: $tree-view-item-color;
+    }
+
+    &.active {
+      background-color: $tree-view-item-background-color-active;
+      color: $tree-view-item-color-active;
+    }
+  }
+
+  .tree-view-folder-items a {
+    padding-left: $tree-view-base-font-size * 2.5;
+  }
+}

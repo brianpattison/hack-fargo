@@ -1,0 +1,16 @@
+fieldset {
+  margin-bottom: 1em;
+
+  legend {
+    color: $grey;
+    font-size: 0.8em;
+    font-weight: 500;
+    margin-bottom: 1.75em;
+    text-transform: uppercase;
+  }
+}
+
+.navigation-sidebar fieldset legend {
+  color: color($grey, 600);
+  padding: 8px;
+}

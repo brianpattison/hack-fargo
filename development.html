@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html style="background-color: #eee; height: 100%; padding: 4em 0; width: 100%;">
+  <head>
+    <style>
+      h1,
+      p {
+        font-family: sans-serif;
+        margin: 0;
+        text-align: center;
+      }
+
+      p {
+        margin: 1em;
+      }
+
+      #livereload {
+        margin: 0 0 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to Electron</h1>
+
+    <p id="livereload">
+      <small>Starting Ember and Livereload servers</small>
+    </p>
+
+    <p id="loading">
+      Loading in <strong id="countdown">5</strong> seconds...
+    </p>
+
+    <script type="text/javascript">
+      var count = 5;
+      var countdown = document.getElementById('countdown');
+      var loading = document.getElementById('loading');
+
+      function updateCountdown() {
+
+        countdown.innerHTML = count;
+        if (count > 0) {
+          count -= 1;
+          setTimeout(function() {
+            updateCountdown();
+          }, 1000);
+        } else {
+          loading.innerHTML = 'Loading <strong>http://localhost:5000</strong>...<br><br><small>Thanks for your patience.</small>';
+          window.location = 'http://localhost:5000';
+        }
+      }
+
+      updateCountdown();
+    </script>
+  </body>
+</html>

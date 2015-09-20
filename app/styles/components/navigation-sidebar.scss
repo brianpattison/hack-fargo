@@ -1,0 +1,33 @@
+$navigation-background-color:               color($grey, 200);
+$navigation-base-font-size:                 13px;
+$navigation-border-color:                   darken($navigation-background-color, 3%);
+$navigation-link-background-color-active:   darken($navigation-background-color, 12%);
+$navigation-link-color:                     $base-font-color;
+$navigation-link-color-active:              $base-font-color;
+$toolbar-background-color:                  color($grey, 50);
+$toolbar-icon-color:                        rgba($black, 0.5);
+
+.navigation-sidebar {
+  background-color: $navigation-background-color;
+  font-size: $navigation-base-font-size;
+  max-width: $navigation-width;
+  min-width: $navigation-width;
+  position: relative;
+
+  .resize {
+    cursor: col-resize;
+    display: block;
+    height: 100%;
+    position: absolute;
+    right: -5px;
+    top: 0;
+    width: 10px;
+    z-index: 100;
+  }
+
+  .title {
+    border-right: 1px solid $navigation-border-color;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+}

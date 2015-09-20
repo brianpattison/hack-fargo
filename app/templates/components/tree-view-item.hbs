@@ -1,0 +1,7 @@
+{{#if model.templateName}}
+  {{partial model.templateName model}}
+{{else}}
+  <span class="tree-view-item-name">
+    {{get model labelProperty}}
+  </span>
+{{/if}}

@@ -1,0 +1,32 @@
+main {
+  background-color: $base-background-color;
+  display: block;
+  min-height: 100%;
+  position: relative;
+
+  .content {
+    bottom: 0;
+    left: 0;
+    overflow: auto;
+    padding: 20px 28px 0;
+    position: absolute;
+    right: 0;
+    top: 36px;
+    z-index: 1;
+  }
+
+  md-progress-linear[md-mode="indeterminate"],
+  .no-progress {
+    position: absolute;
+    top: 29px;
+    z-index: 2;
+
+    + .content {
+      top: 36px;
+    }
+  }
+
+  .submit {
+    margin: 1em auto;
+  }
+}

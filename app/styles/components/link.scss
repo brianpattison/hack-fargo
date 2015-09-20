@@ -1,0 +1,16 @@
+$link-color: $primary-color;
+$link-color-active: darken($primary-color, 10%);
+$link-color-hover: lighten($primary-color, 5%);
+
+a {
+  color: $link-color;
+  cursor: default;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+
+  &:active {
+    color: $link-color-active;
+  }
+}

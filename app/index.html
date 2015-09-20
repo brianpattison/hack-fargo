@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hack Fargo</title>
+
+    {{content-for 'head'}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/hack-fargo.css">
+
+    {{content-for 'head-footer'}}
+  </head>
+  <body>
+    {{content-for 'body'}}
+
+    <script type="text/javascript">
+      // Make Ember CLI and Electron to play nice together
+      if (window.require === undefined) {
+        function badRequire(moduleName) {
+          console.error('Module `' + moduleName + '` must be loaded by the Electron app. Run `npm start` to open the app.');
+          return { require: badRequire };
+        }
+        window.require = badRequire;
+        window.requireNode = badRequire;
+      } else {
+        window.requireNode = window.require;
+        window.require = undefined;
+        window.module = undefined;
+      }
+
+      // Disable drag, drop, and zoom events
+      window.ondragstart = function() { return false; }
+      document.addEventListener('drop',       function(e) { e.preventDefault(); e.stopPropagation(); });
+      document.addEventListener('dragover',   function(e) { e.preventDefault(); e.stopPropagation(); });
+      document.addEventListener('mousewheel', function(e) { if (e.deltaY % 1 !== 0) { e.preventDefault(); } });
+    </script>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/hack-fargo.js"></script>
+
+    {{content-for 'body-footer'}}
+  </body>
+</html>

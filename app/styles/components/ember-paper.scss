@@ -1,0 +1,102 @@
+// Improvements to the ember-paper input styles
+body.ember-application {
+  md-autocomplete,
+  md-input-container {
+    margin: 0 auto;
+    outline: none;
+  }
+
+  md-autocomplete md-input-container {
+    width: 100%;
+  }
+
+  .md-autocomplete-suggestions li {
+    border-bottom: 2px solid $white;
+    cursor: default;
+    font-size: 12px;
+    height: 41px;
+    line-height: 41px;
+    padding: 0 15px;
+  }
+
+  md-input-container {
+    padding-left: 0;
+    padding-right: 0;
+
+    label {
+      font-size: 17px;
+      height: 17px;
+      line-height: 17px;
+      transform: translateZ(0) translate3d(0, 28px, 0);
+      transition: font-size cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s,
+                  transform cubic-bezier(0.25, 0.8, 0.25, 1) 0.25s;
+    }
+
+    input {
+      color: $base-font-color;
+      font-size: 16px;
+    }
+
+    input[type="search"] {
+      -webkit-appearance: textfield;
+    }
+
+    input[type="search"]::-webkit-search-decoration {
+      -webkit-appearance: none;
+    }
+
+    &.md-input-focused label:not(.md-no-float),
+    &.md-input-has-value label:not(.md-no-float) {
+      font-size: 15px;
+      transform: translateZ(0) translate3d(0, 1px, 0);
+    }
+
+    &.md-input-focused label:not(.md-no-float) {
+      color: color($primary-color, 600);
+    }
+  }
+
+  .md-menu-showing label:not(.md-no-float) {
+    font-size: 15px;
+    transform: translateZ(0) translate3d(0, 1px, 0);
+  }
+
+  .md-ripple-container {
+    display: none;
+  }
+
+  md-switch {
+    cursor: default;
+    margin: 0 0 16px;
+
+    .md-container,
+    .md-label {
+      cursor: default;
+      padding: 0;
+    }
+  }
+}
+
+// Styles for making disabled inputs look good when used for detail views.
+// I'm sorry I used !important, but there are too many classes applied to the ember-paper input fields.
+body.ember-application.settings,
+body.ember-application.show {
+  md-input-container[disabled="disabled"] {
+    padding-bottom: 1em;
+
+    label {
+      color: rgba(0, 0, 0, 0.54) !important;
+      font-size: 0.85em;
+      padding-left: 0;
+    }
+
+    input {
+      border-color: transparent !important;
+      color: $base-font-color;
+      cursor: text;
+      font-size: 0.9em;
+      padding-left: 0;
+      padding-top: 0;
+    }
+  }
+}

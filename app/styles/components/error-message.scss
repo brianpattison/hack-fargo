@@ -1,0 +1,16 @@
+$error-message-background-color: $red;
+$error-message-font-color: color($error-message-background-color, 50);
+
+.error-message {
+  background-color: $error-message-background-color;
+  color: $error-message-font-color;
+  display: none;
+  line-height: 1.5em;
+  margin: -20px -28px 20px;
+  padding: 14px;
+  z-index: 2;
+
+  &.error-active {
+    display: block;
+  }
+}

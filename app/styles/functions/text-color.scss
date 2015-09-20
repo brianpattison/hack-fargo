@@ -1,0 +1,31 @@
+// Get the text color to go on top of Google's material design colors
+// @see https://www.google.com/design/spec/style/color.html
+@function text-color($color) {
+  $text-color: $white;
+
+  @if $color == $amber {
+    $text-color: $black;
+  } @else if $color == $cyan {
+    $text-color: $black;
+  } @else if $color == $deep-orange {
+    $text-color: $black;
+  } @else if $color == $green {
+    $text-color: $black;
+  } @else if $color == $grey {
+    $text-color: $black;
+  } @else if $color == $light-blue {
+    $text-color: $black;
+  } @else if $color == $light-green {
+    $text-color: $black;
+  } @else if $color == $green {
+    $text-color: $black;
+  } @else if $color == $lime {
+    $text-color: $black;
+  } @else if $color == $orange {
+    $text-color: $black;
+  } @else if $color == $yellow {
+    $text-color: $black;
+  }
+
+  @return $text-color;
+}

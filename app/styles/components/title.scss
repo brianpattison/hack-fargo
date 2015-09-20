@@ -1,0 +1,26 @@
+$title-background-color: $blue-grey;
+$title-font-color: text-color($blue-grey);
+
+.title {
+  background-color: $title-background-color;
+  box-shadow: 0 1px 0 rgba(darken(color($grey, 200), 13%), 0.3);
+  color: $title-font-color;
+  font-size: 18px;
+  font-weight: 300;
+  height: 36px;
+  letter-spacing: 2px;
+  overflow: auto;
+  padding: 10px 14px 11px;
+  position: relative;
+  white-space: nowrap;
+  z-index: 3;
+
+  small {
+    bottom: 10px;
+    color: $accent-color;
+    font-size: 10px;
+    position: absolute;
+    right: 16px;
+    text-transform: none;
+  }
+}

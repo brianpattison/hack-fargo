@@ -1,0 +1,48 @@
+// Import ember-paper first so any other mixins override the mixins created by ember-paper
+$primary: "deep-purple";
+$accent: "lime";
+$warn: "red";
+@import "node_modules/ember-paper/app/styles/color-palette";
+@import "node_modules/ember-paper/app/styles/default-theme";
+@import "node_modules/ember-paper/app/styles/mixins";
+@import "node_modules/ember-paper/app/styles/variables";
+@import "node_modules/ember-paper/app/styles/paper-autocomplete";
+@import "node_modules/ember-paper/app/styles/paper-backdrop";
+@import "node_modules/ember-paper/app/styles/paper-input";
+@import "node_modules/ember-paper/app/styles/paper-progress-linear";
+@import "node_modules/ember-paper/app/styles/paper-switch";
+
+// Vendor imports
+@import "reset";
+@import "bourbon";
+@import "neat";
+
+// Sass functions
+@import "functions/color";
+@import "functions/text-color";
+
+// Global app variables
+$primary-color: $deep-purple;
+$accent-color: $lime;
+
+$base-background-color: color($grey, 100);
+$base-font-color: color($grey, 800);
+$base-font-family: "San Francisco", "Helvetica Neue", Segoe UI, "Lucida Grande", Arial, sans-serif;
+$base-font-size: 14px;
+$navigation-width: 190px;
+$transition-timing: cubic-bezier(0.25, 0.8, 0.25, 1);
+
+// Sass mixins
+@import "mixins/button";
+
+// All styles
+@import "components/button";
+@import "components/ember-paper";
+@import "components/error-message";
+@import "components/fieldset";
+@import "components/link";
+@import "components/main";
+@import "components/navigation-sidebar";
+@import "components/title";
+@import "components/tree-view";
+@import "layout/body";

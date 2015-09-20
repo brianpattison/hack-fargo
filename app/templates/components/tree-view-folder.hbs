@@ -1,0 +1,20 @@
+{{#if model.templateName}}
+  {{partial model.templateName model}}
+{{else}}
+  <span class="tree-view-folder-name" {{action "toggleFolder" model}}>
+    <i class="fa {{if model.isOpen 'fa-folder-open-o' 'fa-folder-o'}}"></i>
+    {{get model labelProperty}}
+  </span>
+{{/if}}
+
+{{#if model.folderIsOpen}}
+  <ul class="tree-view-folder-items">
+    {{#each model.folderItems as |folderItem|}}
+      {{#if folderItem.isFolder}}
+        {{tree-view-folder model=folderItem labelProperty="displayName"}}
+      {{else}}
+        {{tree-view-item model=folderItem labelProperty="displayName"}}
+      {{/if}}
+    {{/each}}
+  </ul>
+{{/if}}
