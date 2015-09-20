@@ -28,8 +28,8 @@ export default Ember.Component.extend({
         navigationWidth = event.rect.width;
         // Make sure the navigation can't be resized past the window or too small
         if (windowWidth - minContainerWidth > navigationWidth && navigationWidth > minContainerWidth) {
-          event.target.style.maxWidth = navigationWidth + 'px';
-          event.target.style.minWidth = navigationWidth + 'px';
+          // event.target.style.maxWidth = navigationWidth + 'px';
+          // event.target.style.minWidth = navigationWidth + 'px';
         }
       });
 
@@ -40,18 +40,18 @@ export default Ember.Component.extend({
       });
 
       // Set the initial width from the saved setting
-      if (initialWidth) {
-        setTimeout(function() {
-          var nav = $(navSelector);
-          nav.css({
-            maxWidth: initialWidth + 'px',
-            minWidth: initialWidth + 'px'
-          });
-          $('.application').css({ opacity: 1 });
-        }, 0);
-      } else {
+      // if (initialWidth) {
+      //   setTimeout(function() {
+      //     var nav = $(navSelector);
+      //     nav.css({
+      //       maxWidth: initialWidth + 'px',
+      //       minWidth: initialWidth + 'px'
+      //     });
+      //     $('.application').css({ opacity: 1 });
+      //   }, 0);
+      // } else {
         $('.application').css({ opacity: 1 });
-      }
+      // }
     });
   }
 });

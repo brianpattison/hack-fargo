@@ -22,13 +22,13 @@ module.exports = function(environment) {
   // CSP Policy Directives
   // @see https://developer.mozilla.org/en-US/docs/Web/Security/CSP/CSP_policy_directives
   ENV.contentSecurityPolicy = {
-    'connect-src': "'self'",
+    'connect-src': "'self' *.googleapis.com gis.hackfargo.co",
     'default-src': "'none'",
     'font-src': "'self' fonts.gstatic.com",
-    'img-src': "'self' data:",
+    'img-src': "*",
     'media-src': "'self'",
-    'script-src': "'self' 'unsafe-inline'",
-    'style-src': "'self' 'unsafe-inline'"
+    'script-src': "'self' 'unsafe-eval' 'unsafe-inline' *.googleapis.com",
+    'style-src': "'self' 'unsafe-inline' *.googleapis.com",
   };
 
   if (environment === 'development') {

@@ -2,6 +2,7 @@
   "predef": [
     "$",
     "document",
+    "google",
     "process",
     "require",
     "requireNode",

@@ -1,4 +1,5 @@
 import Ember from 'ember';
+import Geolocation from 'hack-fargo/models/geolocation';
 
 export default Ember.Route.extend({
   activate: function() {
@@ -7,6 +8,10 @@ export default Ember.Route.extend({
         $('.application').css({ opacity: 1 });
       }, 0);
     });
+  },
+
+  model() {
+    return Geolocation.create();
   },
 
   title: function(tokens) {

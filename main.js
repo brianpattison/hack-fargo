@@ -25,7 +25,8 @@ app.on('ready', function() {
     'min-width':          465,
     'show':               false,
     'title':              app.getName(),
-    'width':              470
+    'width':              470,
+    'web-preferences':    { 'web-security': process.env.ELECTRON_ENV !== 'development' }
   });
 
   if (process.env.ELECTRON_ENV === 'development') {

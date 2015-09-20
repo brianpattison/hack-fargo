@@ -30,4 +30,41 @@ $toolbar-icon-color:                        rgba($black, 0.5);
     letter-spacing: 4px;
     text-transform: uppercase;
   }
+
+  md-input-container {
+    margin: 16px;
+  }
+
+  md-progress-linear {
+    display: none;
+  }
+
+  .safety-rating {
+    position: relative;
+    top: -4px;
+
+    &.very-safe {
+      color: color($green, 700);
+    }
+
+    &.safe {
+      color: $green;
+    }
+
+    &.kind-of-safe {
+      color: $orange;
+    }
+
+    &.be-careful {
+      color: color($red, 400);
+    }
+
+    &.not-safe {
+      color: color($red, 700);
+    }
+  }
+
+  button {
+    margin: 0 16px 16px;
+  }
 }

@@ -1,8 +1,37 @@
 <div class="application">
+
   {{#navigation-sidebar settings=settings}}
-    <fieldset>
-      <legend>Hello world</legend>
-    </fieldset>
+    <form {{action "findRoute"}}>
+      {{paper-autocomplete
+        allowNonExisting=true
+        delay=300
+        floating=true
+        minLength=3
+        model=origin
+        placeholder="Starting Point"
+        source=originLocations
+      }}
+
+      {{paper-autocomplete
+        allowNonExisting=true
+        delay=300
+        floating=true
+        minLength=3
+        model=destination
+        placeholder="Destination"
+        source=destinationLocations
+      }}
+
+      <button>
+        Find Route
+      </button>
+
+      {{#if directions}}
+        <span class="safety-rating {{safetyRatingCssClass}}">
+          {{safetyRating}}
+        </span>
+      {{/if}}
+    </form>
   {{/navigation-sidebar}}
 
   <main>
