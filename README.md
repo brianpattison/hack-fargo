@@ -16,7 +16,7 @@ You will need the following things properly installed on your computer.
 
 ```bash
 git clone https://github.com/brianpattison/hack-fargo.git
-cd ember-electron
+cd hack-fargo
 npm install && bower install
 ```
 
