@@ -44,3 +44,7 @@ npm run dist
 * [ember inspector](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
 * [bourbon](http://bourbon.io)
 * [neat](http://neat.bourbon.io)
+
+## Testing
+
+Testing waffle.io
